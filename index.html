@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 	<head>
+		<style> 
+		body{
+			background-image: url(https://i.ytimg.com/vi/jz2lbjPC12Q/maxresdefault.jpg)no-repeat center center fixed;
+    		background-size: center;
+    	}
+		h1{
+			font-size: 600%;
+		}
+		</style>
 		<meta charset="utf-8">
-		<title>Title</title>
+		<title>Minesweeper</title>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="styles.css">
 		<script src="processing.js"></script>
@@ -9,14 +18,18 @@
 	</head>
 	<body>
 		<header>
-			<h1>Header</h1>
+			<marquee direction="down" width="250" height="200" behavior="alternate"> 
+			<marquee behavior="alternate">
+				<h1>BE CAREFUL WHERE YOU CLICK</h1>
+			</marquee>
+			</marquee>
 		</header>
 			<section id="content">
 				<canvas id="Minesweeper" data-processing-sources="Minesweeper.pde">
 				</canvas>
 		    </section>
 	    <footer>
-		    Footer
+		    MOUSE X TO OPEN BOX, MOUSE Y TO FLAG.
 	    </footer>
 	</body>
 </html>
