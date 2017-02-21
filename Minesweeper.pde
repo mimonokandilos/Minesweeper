@@ -119,7 +119,7 @@ public class MSButton
     }
     public boolean isValid(int r, int c)
     {
-        //your code here
+        if(marked == true)
         return false;
     }
     public int countBombs(int row, int col)
