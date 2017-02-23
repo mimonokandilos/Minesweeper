@@ -131,9 +131,37 @@ public class MSButton
     public int countBombs(int row, int col)
     {
         int numBombs = 0;
-        if(isValid(row, col) == true && )
+        if(isValid(row+1, col) == true && bombs.contains(buttons[row+1][col])
         {
-
+            numBombs ++;
+        }
+        if(isValid(row+1, col+1) == true && bombs.contains(buttons[row+1][col+1])
+        {
+            numBombs ++;
+        }
+        if(isValid(row, col+1) == true && bombs.contains(buttons[row][col+1])
+        {
+            numBombs ++;
+        }
+        if(isValid(row-1, col) == true && bombs.contains(buttons[row-1][col])
+        {
+            numBombs ++;
+        }
+        if(isValid(row, col-1) == true && bombs.contains(buttons[row][col-1])
+        {
+            numBombs ++;
+        }
+        if(isValid(row-1, col-1 == true && bombs.contains(buttons[row-1][col-1])
+        {
+            numBombs ++;
+        }
+        if(isValid(row-1, col+1) == true && bombs.contains(buttons[row-1][col+1])
+        {
+            numBombs ++;
+        }
+        if(isValid(row+1, col-1) == true && bombs.contains(buttons[row+1][col-1])
+        {
+            numBombs ++;
         }
         return numBombs;
     }
