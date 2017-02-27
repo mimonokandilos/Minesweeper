@@ -95,6 +95,26 @@ public class MSButton
     public void mousePressed () 
     {
         clicked = true;
+        if(keyPressed == true)
+        {
+            if(isMarked == false)
+            {
+                isClicked == false;
+            }
+        }
+        else if (bombs.contains(this))
+            {
+                displayLosingMessage(); 
+            }
+            else if (countBombs > 0) 
+            {
+                setLabel == numBombs;
+            }
+            else
+            {
+                
+            }
+        }
         //your code here
     }
 
