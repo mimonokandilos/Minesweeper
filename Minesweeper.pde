@@ -116,35 +116,35 @@ public class MSButton
         }
         else
         {
-            if(isValid(r,c-1) && !buttons[r][c-1].isMarked())
+            if(isValid(r,c-1) && !buttons[r][c-1].isClicked())
             {
                 buttons[r][c-1].mousePressed();
             }
-            else if(isValid(r-1,c-1) && !buttons[r-1][c-1].isMarked())
+            if(isValid(r-1,c-1) && !buttons[r-1][c-1].isClicked())
             {
                 buttons[r-1][c-1].mousePressed();
             }
-            else if(isValid(r-1,c) && !buttons[r-1][c].isMarked())
+            if(isValid(r-1,c) && !buttons[r-1][c].isClicked())
             {
                 buttons[r-1][c].mousePressed();
             }
-            else if(isValid(r,c+1) && !buttons[r][c+1].isMarked())
+            if(isValid(r,c+1) && !buttons[r][c+1].isClicked())
             {
                 buttons[r][c+1].mousePressed();
             }
-            else if(isValid(r+1,c+1) && !buttons[r+1][c+1].isMarked())
+            if(isValid(r+1,c+1) && !buttons[r+1][c+1].isClicked())
             {
                 buttons[r+1][c+1].mousePressed();
             }
-            else if(isValid(r+1,c) && !buttons[r+1][c].isMarked())
+            if(isValid(r+1,c) && !buttons[r+1][c].isClicked())
             {
                 buttons[r+1][c].mousePressed();
             }
-            else if(isValid(r+1,c-1) && !buttons[r+1][c-1].isMarked())
+            if(isValid(r+1,c-1) && !buttons[r+1][c-1].isClicked())
             {
                 buttons[r+1][c-1].mousePressed();
             }
-            else if(isValid(r-1,c+1) && !buttons[r-1][c+1].isMarked())
+            if(isValid(r-1,c+1) && !buttons[r-1][c+1].isClicked())
             {
                 buttons[r-1][c+1].mousePressed();
             }
@@ -175,7 +175,7 @@ public class MSButton
     }
     public boolean isValid(int r, int c)
     {
-        if(r >= 0 && r <= NUM_ROWS && c >= 0 && c <= NUM_COLS)
+        if(r >= 0 && r < NUM_ROWS && c >= 0 && c < NUM_COLS)
         {
             return true;
         }
