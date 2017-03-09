@@ -6,6 +6,8 @@ public final static int NUM_COLS = 40;
 public final static int NUM_ROWS = 40;
 public int nBombs = 100;
 public int realBombs = 0;
+public boolean gameOver = false;
+
 void setup ()
 {
     size(800, 800);
@@ -56,7 +58,12 @@ public boolean isWon()
 }
 public void displayLosingMessage()
 {
-    //your code here
+    if(gameOver == true)
+    {
+        background(0);
+        stroke(255);
+        setLabel("YOU LOST");
+    }
 }
 public void displayWinningMessage()
 {
@@ -95,20 +102,22 @@ public class MSButton
     public void mousePressed () 
     {
         clicked = true;
-        if(keyPressed == true)
+        if(keyPressed == true || mousePressed && (mouseButton == RIGHT))
         {
             if(marked == false)
             {
-                clicked = false;
+                marked = true;
             }
-            else 
+            else if (marked == true)
             {
-                clicked = true;     
+                clicked = false;
+                marked =  false;     
             }
         }
         else if (bombs.contains(this))
         {
             displayLosingMessage(); 
+            gameOver == true;
         }
         else if (countBombs(r,c) > 0) 
         {
