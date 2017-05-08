@@ -48,26 +48,59 @@ public void setBombs()
 public void draw ()
 {
     background( 0 );
-    if(isWon())
+    if(isWon() == true){
         displayWinningMessage();
+    }
+
 }
 public boolean isWon()
 {
-    //your code here
-    return false;
+    for(int r = 0; r < NUM_ROWS; r++)
+    {
+        for(int c = 0; c < NUM_COLS; c++)
+        {
+            if(!buttons[r][c].isClicked() == true && !bombs.contains(buttons[r][c]))
+        {
+        return false;
+            }
+        }
+    }
+    return true;
 }
 public void displayLosingMessage()
 {
-    if(gameOver == true)
+   for(int r = 0; r < NUM_ROWS; r++)
     {
-        background(0);
-        stroke(255);
-        setLabel("YOU LOST");
+        for(int c = 0; c < NUM_COLS; c++)
+        {
+            if(!buttons[r][c].isClicked() && bombs.contains(buttons[r][c]))
+            {
+                buttons[r][c].marked = false;
+                buttons[r][c].clicked = true;
+                buttons[0][0].setLabel("Y");
+                buttons[0][1].setLabel("O");
+                buttons[0][2].setLabel("U");
+                buttons[0][3].setLabel("L");
+                buttons[0][4].setLabel("O");
+                buttons[0][5].setLabel("S");
+                buttons[0][6].setLabel("T");
+                buttons[0][7].setLabel("!");
+            }
+        }
     }
 }
 public void displayWinningMessage()
 {
-    //your code here
+    
+    buttons[0][0].setLabel("C");
+    buttons[0][1].setLabel("O");
+    buttons[0][2].setLabel("N");
+    buttons[0][3].setLabel("G");
+    buttons[0][4].setLabel("R");
+    buttons[0][5].setLabel("A");
+    buttons[0][6].setLabel("T");
+    buttons[0][7].setLabel("S");
+    buttons[0][8].setLabel("!");
 }
 
 public class MSButton
@@ -117,7 +150,6 @@ public class MSButton
         else if (bombs.contains(this))
         {
             displayLosingMessage(); 
-            gameOver == true;
         }
         else if (countBombs(r,c) > 0) 
         {
